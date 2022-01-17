@@ -1,0 +1,26 @@
+#ellen{
+    border: solid 2px black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+
+#countdown{
+    padding: 10px;
+    margin : 10px;
+    display: none;
+    color: black;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+/* hide tv img */
+#tvimg_l{display: none;}
+#tvimg_r{display: none;}
+
+/* hide console button img */
+#consoleimg_r{display:none;}
+#consoleimg_g{display:none;}

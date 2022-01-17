@@ -1,0 +1,77 @@
+.App {
+  text-align: left;
+  margin-left: 50pt;
+  margin-right: 50pt;
+  margin-top: 50pt;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@font-face {
+  font-family: 'ONE-Mobile-POP';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root{
+  --Primay:#372f2a;
+  --Primay-light:#574b45;
+  --Primay-dark:#130f0d;
+  --secondary:#4A7053;
+  --BE-Box:rgba(192,177,143,0.6);
+  --BK-Box:rgba(0,0,0,0.8);
+}
+
+*, html, body{margin:0; padding:0;}
+html, body{width:100%; height:100%; }
+html{font-family:'ONE-Mobile-POP', sans-serif; font-size:16px; color:var(--Primay); line-height: 1.6;}
+body{position:relative; }
+input:focus {outline:none;}
+a{text-decoration: none; display:block; color:var(--Primay);}
+ul, ol{list-style: none; }
+div{box-sizing: border-box;}
+button{cursor: pointer; border:0; border-radius: 8px; color: #fff; font-family: 'ONE-Mobile-POP'; font-size: 1rem; background-color: var(--Primay);}
+button:active, a, label{ -webkit-tap-highlight-color : rgba(0,0,0,0); }
+
+.marginBottom{margin-bottom:120px; }
+
+div.wrap{
+  overflow: auto;
+  width:900px;
+  margin:0 auto;
+  position:relative;
+  background:url(img/bg.jpg) top center / cover;
+}
+
+content{
+  position:relative;
+  width:100%;
+}
+
+
+@media screen and (max-width: 900px) {
+div.wrap{width:100%; min-width: 320px;}
+}
