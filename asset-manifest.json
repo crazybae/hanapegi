@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/hanapegi/static/css/main.360ed5b5.chunk.css",
+    "main.js": "/hanapegi/static/js/main.a9c0c101.chunk.js",
+    "main.js.map": "/hanapegi/static/js/main.a9c0c101.chunk.js.map",
+    "runtime-main.js": "/hanapegi/static/js/runtime-main.0f660009.js",
+    "runtime-main.js.map": "/hanapegi/static/js/runtime-main.0f660009.js.map",
+    "static/js/2.e7a7c1f3.chunk.js": "/hanapegi/static/js/2.e7a7c1f3.chunk.js",
+    "static/js/2.e7a7c1f3.chunk.js.map": "/hanapegi/static/js/2.e7a7c1f3.chunk.js.map",
+    "index.html": "/hanapegi/index.html",
+    "static/css/main.360ed5b5.chunk.css.map": "/hanapegi/static/css/main.360ed5b5.chunk.css.map",
+    "static/js/2.e7a7c1f3.chunk.js.LICENSE.txt": "/hanapegi/static/js/2.e7a7c1f3.chunk.js.LICENSE.txt",
+    "static/media/play.css": "/hanapegi/static/media/table.ac275a16.png",
+    "static/media/App.css": "/hanapegi/static/media/bg.f48e24fb.jpg",
+    "static/media/hand-paper.870fc736.png": "/hanapegi/static/media/hand-paper.870fc736.png",
+    "static/media/hand-scissors.2f283daf.png": "/hanapegi/static/media/hand-scissors.2f283daf.png",
+    "static/media/title.1df88d2d.png": "/hanapegi/static/media/title.1df88d2d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f660009.js",
+    "static/js/2.e7a7c1f3.chunk.js",
+    "static/css/main.360ed5b5.chunk.css",
+    "static/js/main.a9c0c101.chunk.js"
+  ]
+}
