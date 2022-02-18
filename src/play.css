@@ -1,3 +1,22 @@
+/* display block none */
+#msg_box_ready{ display: none; } /* ready버튼 누르면 waiting 문구 */
+.box_wrap .ready > button:active + div#msg_box_ready{ display: block !important; }
+
+#msg_box_started{ display: none; } /* Started 문구 */
+#msg_box_rps{ display: none; } /* 가위바위보 문구 */
+#msg_box_count{ display: none; } /* 하나빼기 321 카운트 문구 */
+#msg_box_result{ display: none; } /* 승패 문구 */
+
+.box_wrap .Choices > div#card_info{ display: none; } /* 카드 랜덤 선택 */
+.box_wrap .Choices > button:active + span + div#card_info{ display: block !important; }
+
+
+
+.tv div.hand_wrap > span{ display: block; } /* 가위바위보 손 */
+.tv div.hand_wrap > span.select{ display: block; } /* 남은 손 */
+
+
+
 content{float: left; text-align: center; }
 
 header{width:100%; padding-top:5%;  }
@@ -73,9 +92,7 @@ header > a > img{width:246px; }
   width:156px;
   float: left;
 }
-.box_wrap .Choices > button:active + span + div{
-  display: block;
-}
+
 .box_wrap .Choices > span.address{
   float: left;
   margin-left:8px;
@@ -83,7 +100,6 @@ header > a > img{width:246px; }
   font-size:0.75rem;
 }
 .box_wrap .Choices > div{
-  display: none;
   float: right;
   width:260px;
 }
@@ -112,28 +128,17 @@ header > a > img{width:246px; }
   font-size:2rem;
 }
 
-/* msg_box block */
-.box_wrap .ready > div.msg_box{
-  display: block !important;
-}
-
-
-/* msg_box */
-#msg_box_ready{ display: none; }
-#msg_box_rps{ display: none; }
-#msg_box_result{ display: none; }
-
-
 .msg_box{
   position: absolute;
-  top:50%; left:0; right:0;
+  top:52%; left:0; right:0;
   transform:translateY(-50%);
   background: var(--BK-Box);
   height:200px;
-  z-index: 20;
+  z-index: 50;
   color:#fff;
 }
-.msg_box > div{
+.msg_box > div,
+#msg_box_result > div{
   height:100%;
   display: flex;
   flex-direction: column;
@@ -229,22 +234,20 @@ header > a > img{width:246px; }
   }
 }
 
-.box_wrap .ready > div > div > h3{
-  font-size: 2.5rem;
-}
 
 #game_warp{
   position: relative;
   z-index: 10;
   float: left;
   width:100%;
-  padding-top:40px;
+  padding-top:50px;
   background:url(img/bg2.jpg)no-repeat center 310px;
 }
-span.backImg{
+span.tableImg{
   position: absolute; top:0; bottom:0; left:0; right:0;
   background:url(img/table.png)no-repeat;
-  background-position: center 235px;
+  background-position: center 252px;
+  background-size: 740px;
   z-index: 1;
 }
 
@@ -255,23 +258,147 @@ span.backImg{
 /* tv */
 .tv{
   position: relative;
-  width:490px; height:278px;
+  width:520px; height:295px;
   margin:0 auto;
   background: url(img/TV.png)no-repeat center center / cover;
 }
-.tv > span{
-  width:80px; height:80px;
+.tv #tv_inner{
+  width:336px;
+  height:202px;
+  background:rgba(255,255,255,0.5);
   position: absolute;
-  top:95px;
-}
-.tv > span > img{width:100%;}
-.tv > span.left{
-  left:90px;
-}
-.tv > span.right{
-  right:190px;
+  top:40px; left:38px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
+.tv #tv_inner > div{
+  width:50%;
+  height:100%;
+  padding:10px 14px;
+  position: relative;
+  background:#060606;
+}
+.tv #tv_inner > div.player{float: left;}
+.tv #tv_inner > div.you{float: right;}
+
+.tv #tv_inner > div::before{
+  z-index: 20;
+  content: '';
+  position: absolute;
+  top:0; left:0; bottom:0; right:0;
+  opacity: 0.3;
+}
+.tv #tv_inner > div.player::before{
+  background: url(img/man.png)no-repeat;
+  background-position: -44px 56px;
+  background-size: 70%;
+}
+.tv #tv_inner > div.you::before{
+  background: url(img/woman.png)no-repeat;
+  background-position: 89px 56px;
+  background-size: 70%;
+}
+
+.tv #tv_inner > div > h6{
+  font-size:1rem;
+  color:rgb(226, 238, 95);
+  z-index: 21;
+}
+.tv #tv_inner > div.player > h6{text-align: left;}
+.tv #tv_inner > div.you > h6{text-align: right;}
+
+.tv #tv_inner > div > ol{
+  z-index: 21;
+  overflow: auto;
+  margin-top:4px;
+  display: flex;
+  flex-direction: row;
+}
+.tv #tv_inner > div.you > ol{
+  float: right;
+  flex-direction:row-reverse;
+}
+.tv #tv_inner > div > ol > li{
+  width:8px;
+  height:8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+}
+.tv #tv_inner > div > ol > li.win_count{background:var(--pointcolor);}
+.tv #tv_inner > div > ol > li:nth-child(2){margin:0 4px;}
+
+.tv div div.hand_wrap{
+  z-index: 21;
+  overflow: auto;
+  position: absolute;
+  top:46px; bottom:0;
+}
+.tv div.player div.hand_wrap{
+  left:6px; right:32px;
+}
+.tv div.you div.hand_wrap{
+  left:32px; right:6px;
+}
+
+.tv div.hand_wrap > span{
+  width:64px; height:64px;
+  position: absolute;
+  top:20%;
+}
+.tv div.hand_wrap > span.hand_left{left:0;}
+.tv div.hand_wrap > span.hand_right{right:0;}
+
+#tvimg_l{
+  /* background:url(img/hand-scissors.png); */
+  background-position: center center;
+  background-size: cover;
+}
+#tvimg_r{
+  /* background:url(img/hand-paper.png); */
+  background-position: center center;
+  background-size: cover;
+}
+#tvimg_you_l{
+  /* background:url(img/hand-rock.png); */
+  background-position: center center;
+  background-size: cover;
+}
+#tvimg_you_r{
+  /* background:url(img/hand-scissors.png); */
+  background-position: center center;
+  background-size: cover;
+}
+
+.tv div.hand_wrap > span.select{
+  width:80px; height:80px;
+  top:12%;
+  transition: all 0.3s;
+}
+
+.tv #tv_inner::after{
+  content: 'VS';
+  font-size: 2rem;
+  color:rgb(226, 238, 95);
+  position: absolute;
+  top:54%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+#msg_box_result{
+  position: absolute;
+  top:0; left:0; bottom: 0; right:0;
+  background: var(--BK-Box);
+  color:#fff;
+  z-index: 22;
+}
+#msg_box_result > div > p{
+  font-size: 1rem;
+}
+#msg_box_result > div > h3{
+  font-size: 5rem;
+}
 
 /* game_console */
 .game_console{
@@ -326,6 +453,7 @@ span.backImg{
 
 
 
+
 @media screen and (max-width: 900px) {
   header{padding-top:8%;  }
   header > a > img{width:40%; }
@@ -344,6 +472,26 @@ span.backImg{
   .box_wrap div > button{
     padding:12px 10px;
     height:auto;
+  }
+  .msg_box > div.msg_count > h3,
+  .msg_box > div.msg_result > h3{
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  .msg_box > div > p{
+    font-size: 1.25rem;
+  }
+
+  /* loader */
+  .box_wrap .ready > div > div > div.loader,
+  .box_wrap .ready > div > div > div.loader:before,
+  .box_wrap .ready > div > div > div.loader:after {
+    width: 0.75em;
+    height: 0.75em;
+  }
+  .box_wrap .ready > div > div > div.loader {
+    font-size: 8px;
+    margin: 0 auto 30px auto;
   }
 
   .box_wrap .Choices{
@@ -375,27 +523,81 @@ span.backImg{
     padding-top:30px;
     background-position: center 176px;
   }
-  span.backImg{
+  span.tableImg{
     background-position: center 140px;
     background-size: 360px;
   }
 
   .msg_box{
-    top:45%;
-    height:160px;
+    top:50%;
+    height:100px;
   }
+  .msg_box > div > h3{ font-size:2rem;}
 
   /* tv */
   .tv{
     width:270px; height:153px;
   }
-  .tv > span{
-    width:52px; height:52px;
-    top:45px;
+
+  .tv #tv_inner{
+    width:174px;
+    height:106px;
+    background:rgba(255,255,255,0.5);
+    position: absolute;
+    top:20px; left:20px;
+    border-radius: 10px;
+    overflow: hidden;
   }
-  .tv > span > img{width:100%;}
-  .tv > span.left{ left:45px; }
-  .tv > span.right{right:102px; }
+  .tv #tv_inner > div.player::before{
+    background-position: -12px 25px;
+    background-size: 76%;
+  }
+  .tv #tv_inner > div.you::before{
+    background-position: 40px 25px;
+    background-size: 70%;
+  }
+
+  .tv #tv_inner > div{
+    padding:3%;
+  }
+  .tv #tv_inner > div > h6{
+    font-size:0.875rem;
+  }
+  .tv #tv_inner > div > ol > li{
+    width:6px;
+    height:6px;
+  }
+
+  .tv div div.hand_wrap{
+    top:50px;
+  }
+  .tv div.player div.hand_wrap{
+    left:0; right:20px;
+  }
+  .tv div.you div.hand_wrap{
+    left:20px; right:0;
+  }
+
+  .tv div.hand_wrap > span{
+    display: block;
+    width:36px; height:36px;
+    top:0;
+  }
+
+  .tv #tv_inner::after{
+    font-size: 1.25rem;
+    top:64%;
+  }
+
+  #msg_box_result > div > p{
+    font-size: 0.875rem;
+  }
+  #msg_box_result > div > h3{
+    font-size: 2.5rem;
+  }
+
+
+
 
   /* game_console */
   .game_console{

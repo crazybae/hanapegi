@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/squidrpsweb/static/css/main.6ce5cd83.chunk.css",
-    "main.js": "/squidrpsweb/static/js/main.7a9c2c87.chunk.js",
-    "main.js.map": "/squidrpsweb/static/js/main.7a9c2c87.chunk.js.map",
-    "runtime-main.js": "/squidrpsweb/static/js/runtime-main.7e53b603.js",
-    "runtime-main.js.map": "/squidrpsweb/static/js/runtime-main.7e53b603.js.map",
-    "static/css/2.0a9ec390.chunk.css": "/squidrpsweb/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.13a0b694.chunk.js": "/squidrpsweb/static/js/2.13a0b694.chunk.js",
-    "static/js/2.13a0b694.chunk.js.map": "/squidrpsweb/static/js/2.13a0b694.chunk.js.map",
-    "index.html": "/squidrpsweb/index.html",
-    "static/css/2.0a9ec390.chunk.css.map": "/squidrpsweb/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.6ce5cd83.chunk.css.map": "/squidrpsweb/static/css/main.6ce5cd83.chunk.css.map",
-    "static/js/2.13a0b694.chunk.js.LICENSE.txt": "/squidrpsweb/static/js/2.13a0b694.chunk.js.LICENSE.txt"
+    "main.css": "/hanapegi/static/css/main.b26d3f9c.chunk.css",
+    "main.js": "/hanapegi/static/js/main.ad878540.chunk.js",
+    "main.js.map": "/hanapegi/static/js/main.ad878540.chunk.js.map",
+    "runtime-main.js": "/hanapegi/static/js/runtime-main.0f660009.js",
+    "runtime-main.js.map": "/hanapegi/static/js/runtime-main.0f660009.js.map",
+    "static/js/2.e7a7c1f3.chunk.js": "/hanapegi/static/js/2.e7a7c1f3.chunk.js",
+    "static/js/2.e7a7c1f3.chunk.js.map": "/hanapegi/static/js/2.e7a7c1f3.chunk.js.map",
+    "index.html": "/hanapegi/index.html",
+    "static/css/main.b26d3f9c.chunk.css.map": "/hanapegi/static/css/main.b26d3f9c.chunk.css.map",
+    "static/js/2.e7a7c1f3.chunk.js.LICENSE.txt": "/hanapegi/static/js/2.e7a7c1f3.chunk.js.LICENSE.txt",
+    "static/media/play.css": "/hanapegi/static/media/woman.e8aec052.png",
+    "static/media/App.css": "/hanapegi/static/media/bg.347c50a4.jpg",
+    "static/media/hand-paper.870fc736.png": "/hanapegi/static/media/hand-paper.870fc736.png",
+    "static/media/hand-scissors.2f283daf.png": "/hanapegi/static/media/hand-scissors.2f283daf.png",
+    "static/media/title.73404b8c.png": "/hanapegi/static/media/title.73404b8c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7e53b603.js",
-    "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.13a0b694.chunk.js",
-    "static/css/main.6ce5cd83.chunk.css",
-    "static/js/main.7a9c2c87.chunk.js"
+    "static/js/runtime-main.0f660009.js",
+    "static/js/2.e7a7c1f3.chunk.js",
+    "static/css/main.b26d3f9c.chunk.css",
+    "static/js/main.ad878540.chunk.js"
   ]
 }

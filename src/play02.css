@@ -1,0 +1,451 @@
+/* display block none */
+#msg_box_ready{ display: none; } /* ready버튼 누르면 waiting 문구 */
+.box_wrap .ready > button:active + div#msg_box_ready{ display: block !important; }
+
+#msg_box_started{ display: none; } /* Started 문구 */
+#msg_box_rps{ display: none; } /* 가위바위보 문구 */
+#msg_box_count{ display: none; } /* 하나빼기 321 카운트 문구 */
+#msg_box_result{ display: none; } /* 승패 문구 */
+
+.box_wrap .Choices > div#card_info{ display: none; } /* 카드 랜덤 선택 */
+.box_wrap .Choices > button:active + span + div#card_info{ display: block !important; }
+
+
+
+.tv div.hand_wrap > span{ display: block; } /* 가위바위보 손 */
+.tv div.hand_wrap > span.select{ display: block; } /* 남은 손 */
+
+
+
+content{float: left; text-align: center; }
+
+header{width:100%; padding-top:5%;  }
+header > a{display: inline-block; }
+header > a > img{width:246px; }
+
+/* verify */
+#verify{margin-top:24px; }
+#verify > div{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#verify span{
+  margin-right: 8px;
+}
+#verify span.verify_icon{
+  width:32px;
+  height:32px;
+}
+
+#verify button{
+  position: relative;
+  margin-left:20px;
+  padding:6px 10px;
+}
+
+#verify .not_verify > button:hover{
+  background-color: var(--Primay-light);
+}
+
+#verify .verified > button{
+  background-color: var(--BE-Box);
+  cursor: not-allowed;
+}
+
+
+/* box_wrap */
+.box_wrap{
+  margin-top:20px;
+  padding:0 20px;
+  display: flex;
+  flex-direction: row;
+}
+.box_wrap > div {
+  padding:20px;
+  border-radius: 8px;
+  background:var(--BE-Box);
+  height:114px;
+}
+.box_wrap div > button{
+  height:66px;
+  padding-left:10px;
+  padding-right:10px;
+  position: relative;
+  background-color: var(--Primay);
+  display: block;
+  box-shadow: 0 8px 0 var(--Primay-dark);
+}
+.box_wrap div > button:active{
+  box-shadow: 0 4px 0 var(--Primay-dark);
+  top: 6px;
+}
+
+
+/* Choices */
+.box_wrap .Choices{
+  flex-grow: 1;
+  margin-right: 20px;
+}
+.box_wrap .Choices > button{
+  width:156px;
+  float: left;
+}
+.box_wrap .Choices > button:active + span + div{
+  display: block;
+}
+.box_wrap .Choices > span.address{
+  float: left;
+  margin-left:8px;
+  font-family:'roboto', sans-serif;
+  font-size:0.75rem;
+}
+.box_wrap .Choices > div{
+  display: none;
+  float: right;
+  width:260px;
+}
+.box_wrap .Choices > div > img{
+  float: left;
+  margin-right:10px;
+}
+.box_wrap .Choices > div > p {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  flex-wrap: wrap;
+ }
+.box_wrap .Choices > div > p > span{
+  word-break:break-all;
+}
+.box_wrap .Choices > div > p > span:nth-child(2){
+  font-size:0.75rem;
+}
+
+
+/* ready */
+.box_wrap .ready > button{
+  width:260px;
+  font-size:2rem;
+}
+
+/* msg_box block */
+.box_wrap .ready > div.msg_box{
+  display: block !important;
+}
+
+
+/* msg_box */
+#msg_box_ready{ display: none; }
+#msg_box_rps{ display: none; }
+#msg_box_result{ display: none; }
+
+
+.msg_box{
+  position: absolute;
+  top:50%; left:0; right:0;
+  transform:translateY(-50%);
+  background: var(--BK-Box);
+  height:200px;
+  z-index: 20;
+  color:#fff;
+}
+.msg_box > div{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.msg_box > div > h3{
+  font-size: 2.5rem;
+}
+.msg_box > div.msg_count > h3,
+.msg_box > div.msg_result > h3{
+  font-size: 5rem;
+  line-height: 1.2;
+}
+.msg_box > div > p{
+  font-size: 1.5rem;
+}
+
+/* 글자 나타나기 */
+.box_wrap .ready > div > div,
+.msg_box > div > h3{
+  transform: translateX(-300px);
+  animation:txt1 0.3s forwards;
+}
+@keyframes txt1 {
+  80% {transform: translateX(40px); }
+  100% {transform: translateX(0); }
+}
+.msg_box > div > p{
+  transform: translateX(-300px);
+  animation:txt2 0.3s forwards;
+}
+@keyframes txt2 {
+  60% {transform: translateX(40px); }
+  80%, 100% {transform: translateX(0); }
+}
+
+/* loader */
+.box_wrap .ready > div > div > div.loader,
+.box_wrap .ready > div > div > div.loader:before,
+.box_wrap .ready > div > div > div.loader:after {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.box_wrap .ready > div > div > div.loader {
+  color: #fff;
+  font-size: 10px;
+  margin: 0 auto 40px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.box_wrap .ready > div > div > div.loader:before,
+.box_wrap .ready > div > div > div.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.box_wrap .ready > div > div > div.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.box_wrap .ready > div > div > div.loader:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+.box_wrap .ready > div > div > h3{
+  font-size: 2.5rem;
+}
+
+#game_warp{
+  position: relative;
+  z-index: 10;
+  float: left;
+  width:100%;
+  padding-top:40px;
+  background:url(img/bg2.jpg)no-repeat center 310px;
+}
+span.backImg{
+  position: absolute; top:0; bottom:0; left:0; right:0;
+  background:url(img/table.png)no-repeat;
+  background-position: center 235px;
+  z-index: 1;
+}
+
+#game{position: relative; z-index: 2;}
+
+
+
+/* tv */
+.tv{
+  position: relative;
+  width:490px; height:278px;
+  margin:0 auto;
+  background: url(img/TV.png)no-repeat center center / cover;
+}
+.tv > span{
+  width:80px; height:80px;
+  position: absolute;
+  top:95px;
+}
+.tv > span > img{width:100%;}
+.tv > span.left{
+  left:90px;
+}
+.tv > span.right{
+  right:190px;
+}
+
+
+/* game_console */
+.game_console{
+  position: relative;
+  width:390px; height:220px;
+  margin:0 auto; margin-top:65px;
+  background: url(img/game-console.png)no-repeat center center / cover;
+}
+.game_console > .game_console_btn{
+  width:125px; height:125px;
+  position: absolute;
+  top:55px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.game_console > button > img{
+  width:80px;
+  position: absolute;
+  top:22px;
+  left:22px;
+}
+.game_console > .red{
+  left:22px;
+  background: url(img/btn-red.png)no-repeat center center / cover;
+}
+.game_console > .green{
+  right:22px;
+  background: url(img/btn-green.png)no-repeat  center center / cover;
+}
+.game_console > .red:active{
+  background: url(img/btn-red-press.png)no-repeat  center center / cover;
+}
+.game_console > .green:active{
+  background: url(img/btn-green-press.png)no-repeat  center center / cover;
+}
+
+/* points */
+.points{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  float: right;
+  margin:0 20px 30px 0;
+  padding:8px 20px;
+  border-radius: 8px;
+  background:var(--BE-Box);
+}
+.points > span{
+  margin-right:8px;
+  width:32px; height:32px;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  header{padding-top:8%;  }
+  header > a > img{width:40%; }
+
+  #verify > div{ font-size: 0.875rem; }
+  #verify button{
+    font-size: 0.875rem;
+    padding:10px;
+  }
+
+  .box_wrap{
+    margin-top:20px;
+    padding:0 15px;
+    flex-direction: column;
+  }
+  .box_wrap div > button{
+    padding:12px 10px;
+    height:auto;
+  }
+
+  .box_wrap .Choices{
+    margin-bottom: 10px;
+    margin-right:0;
+    height:auto;
+  }
+  .box_wrap .Choices > button{width:100%;  }
+
+  .box_wrap .ready > button{
+    width:100%;
+    font-size:1.5rem;
+  }
+  .box_wrap .Choices > span.address{
+    width:100%;
+    margin-top:12px;
+    margin-left:0;
+    font-family:'roboto', sans-serif;
+    font-size:0.75rem;
+  }
+
+  .box_wrap .Choices > div{
+    float: left;
+    margin-top:10px;
+   }
+  .box_wrap .Choices > div > p{ margin-left: 8px;  }
+
+  #game_warp{
+    padding-top:30px;
+    background-position: center 176px;
+  }
+  span.backImg{
+    background-position: center 140px;
+    background-size: 360px;
+  }
+
+  .msg_box{
+    top:45%;
+    height:160px;
+  }
+
+  /* tv */
+  .tv{
+    width:270px; height:153px;
+  }
+  .tv > span{
+    width:52px; height:52px;
+    top:45px;
+  }
+  .tv > span > img{width:100%;}
+  .tv > span.left{ left:45px; }
+  .tv > span.right{right:102px; }
+
+  /* game_console */
+  .game_console{
+    width:270px; height:152px;
+    margin-top:30px;
+  }
+  .game_console > .game_console_btn{
+    width:86px; height:86px;
+    position: absolute;
+    top:38px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  .game_console > button > img{
+    width:52px;
+    position: absolute;
+    top:18px;
+    left:18px;
+  }
+  .game_console > .red{
+    left:16px;
+  }
+  .game_console > .green{
+    right:16px;
+  }
+
+  /* points */
+  .points{
+    margin:15px;
+    padding:4px 10px;
+  }
+  .points > span{ font-size: 0.875rem;  }
+
+}

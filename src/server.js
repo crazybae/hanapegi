@@ -21,7 +21,14 @@ var appSSDNODES38 = {
 }
 
 
+var appHANAPEGI = {
+    gameServerURL: "wss://hanapegi.dekey.app:8123/rps",
+    boardURL: "https://hanapegi.dekey.app:8123/board",
+    useTLS: false,
+    skipInsecureTLS: true,
+}
 
-const appProp = appSSDNODES38
+
+const appProp = appHANAPEGI
 
 export default appProp;

@@ -303,6 +303,11 @@ export default (props) => {
 
                 case REJECT_GAME:
 
+                    setBannerMessage(`No credit. Try tomorrow~`);
+                    setWaiting(true);
+                    setTimeout(() => {
+                        setWaiting(false);
+                    }, 1000);
                     console.log('game is rejected since', recData.message);
                     break;
 
@@ -526,16 +531,45 @@ export default (props) => {
                         </div>
                     }
                 </div>
+
             </div >
 
             <div id="game_warp">
                 <span className="backImg"></span>
                 <div id="game">
 
+
                     <div className="tv">
-                        <span className="hand left"><img id="tvimg_l" src={cptyRPS1Image} alt="" /></span>
-                        <span className="hand right"><img id="tvimg_r" src={cptyRPS2Image} alt="" /></span>
+                        <div id="tv_inner">
+                            <div className="player left">
+                                <h6>Other Player</h6>
+                                <ol>
+                                    <li className="win_count"></li>
+                                    <li></li>
+                                    <li></li>
+                                </ol>
+                                <div className="hand_wrap">
+                                    <span className="hand hand_left" id="tvimg_l"><img src={cptyRPS1Image} width="50pt" /></span>
+                                    <span className="hand hand_right" id="tvimg_r"><img src={cptyRPS2Image} width="50pt" /></span>
+                                </div>
+                            </div>
+
+                            <div className="you right">
+                                <h6>You</h6>
+                                <ol>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ol>
+                                <div className="hand_wrap">
+                                    <span className="hand hand_left" id="tvimg_you_l"><img src={myRPS1Image} width="50pt" /></span>
+                                    <span className="hand hand_right" id="tvimg_you_r"><img src={myRPS2Image} width="50pt" /></span>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
 
                     <div className="game_console">
                         <div id="countdown"></div>
